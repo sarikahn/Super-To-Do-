@@ -1,0 +1,137 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #333;
+  --card: #fff;
+  --primary: #4CAF50;
+  --danger: #e53935;
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #eee;
+  --card: #2c2c2c;
+  --primary: #81C784;
+  --danger: #ef5350;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls,
+.filter-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+input, select, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#toggleTheme {
+  background: none;
+  color: var(--text);
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#taskList {
+  list-style: none;
+}
+
+.task {
+  background: var(--bg);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.task.completed .text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.task .meta {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.task .due.soon {
+  color: var(--danger);
+}
+
+.task .due.later {
+  color: #ffa726;
+}
+
+.task .due.future {
+  color: #66bb6a;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.actions button {
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+  
